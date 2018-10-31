@@ -1,0 +1,16 @@
+{
+  "posts": [
+    { "id": 1, "title": "json-server", "author": "typicode" }
+  ],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 }
+  ],
+  "profile": { "name": "typicode" },
+  
+  "users": [
+    {"id": 1, "name": "Tom", "job": "Programmer"},
+    {"id": 2, "name": "Sean", "job": "Singer"},
+    {"id": 3, "name": "David", "job": "Web Designer"},
+    {"id": 4, "name": "Max", "job": "Project Manager"}
+  ]
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body onclick>
+  
+  
+  <p data-action="highlight" >111</p>
+  <button type="button" data-action="highlight" onclick="btnClick()">222</button>
+  <br>
+  <textarea name="name" rows="5" cols="20" onkeyup="myKeyup(this)">초기값</textarea>
+  
+  
+  <script type="text/javascript">
+    
+    function myKeyup(elem) { // 브라우저에서 자동으로 이벤트를 준다.
+      console.log(elem.value);
+    }
+
+    // #1
+    function btnClick(){
+      alert(1);
+    }
+    // #2
+    document.getElementsByTagName('button')[0].onclick = function () {
+      alert(2);
+    }
+    
+    // #3
+    // 이벤트를 문자열로 취급할 수 있어서 주고 받을 수 있다.
+    document.getElementsByTagName('button')[0]
+        .addEventListener('click',function () {
+          alert(3);
+        })
+    
+    const highlightActions = document.querySelectorAll('[data-action="highlight"]');
+
+    for (let a of highlightActions) {
+      // a.addEventListener('click', function(evt) {
+      //   console.log(evt);
+      //   evt.preventDefault();
+      //   highlightParas(a.dataset.containing);
+      // })
+
+      a.addEventListener('click', evt => {
+        console.log(event);
+        evt.preventDefault(); 
+        highlightParas(a.dataset.containing);
+      });
+    }
+    
+  
+  </script>
+</body>
+
+</html>

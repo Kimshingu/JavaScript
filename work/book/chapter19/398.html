@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="jquery-3.3.1.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(function() {
+      $('p:odd').css('color', 'red');
+      $('p:even').css('color', 'green');
+
+      $('h3')
+        .after('<hr>')
+        .append('<sup>*</sup>')
+        .filter(':odd')
+        .css('color', 'red');
+
+      $('h3')
+        .after('<hr>')
+        .not('.highlight')
+        .css('margin-left', '20px');
+
+      $('p')
+        .before('<hr>')
+        .find('.code') // p가 가지고 있는 자식 중에서 class.code가 있는거
+        .css('font-size', '30px');
+        
+      const para2 = $('h3').get(1);
+      // Monad Pattern
+      console.log($('h3') instanceof $); // true
+      console.log($('h3').get(1) instanceof $); // false
+      console.log(para2 instanceof HTMLElement);
+    });
+  </script>
+</head>
+
+<body>
+  <h3>aaa</h3>
+  <h3 class="highlight">bbb</h3>
+  <h3>ccc</h3>
+
+  <p>222</p>
+  <p>333
+    <i class="code">444</i>
+    <mark> 555 </mark>
+  </p>
+  <p>666</p>
+  
+</body>
+</html>
